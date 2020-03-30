@@ -1,3 +1,3 @@
 # Proiect-PAO
-Proiect cu un showroom de masini.
+Tema proiectului este un showroom de masini si motociclete.
 Dudceac Octavian-Ioan, grupa 233
