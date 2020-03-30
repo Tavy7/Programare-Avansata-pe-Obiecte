@@ -20,4 +20,12 @@ public class Service {
                 return i;
         return  null;
     }
+
+    public eSpatiuOcupat(int i){
+        return this.spatiu[i];
+    }
+    
+    public setSpatiu(int i, boolean x){
+        this.spatiu[i] = x;
+    }
 }
