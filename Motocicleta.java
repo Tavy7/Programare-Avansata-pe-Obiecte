@@ -1,6 +1,6 @@
 package src;
 
-public class Motocicleta extends src.Vehicul{
+public class Motocicleta extends src.Vehicul implements Comparable{
     protected boolean permitePasager;
     protected boolean permiteAtas;
 
@@ -40,5 +40,10 @@ public class Motocicleta extends src.Vehicul{
         else
             y = "nu permite atas";
         return super.toString() + "\nVehiculul este o motocicleta care " + x + " si " + y + ".\n";
+    }
+    
+    @Override
+    public int compareTo (Object obj){
+        return this.putere - ((Motocicleta)obj).getPutere();
     }
 }
