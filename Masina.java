@@ -1,6 +1,6 @@
 package src;
 
-public class Masina extends src.Vehicul {
+public class Masina extends src.Vehicul implements Comparable{
     protected int numarPortiere;
     protected int numarLocuri;
     protected boolean gpl;
@@ -29,5 +29,10 @@ public class Masina extends src.Vehicul {
     public String toString() {
         return super.toString() + "\nVehiculul este o masina cu " + this.numarLocuri + " locuri in " +
                 this.numarPortiere + " portiere.\n";
+    }
+    
+    @Override
+    public int compareTo (Object obj){
+        return this.putere - ((Masina)obj).getPutere();
     }
 }
