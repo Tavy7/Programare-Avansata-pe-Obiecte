@@ -1,6 +1,6 @@
 package src;
 
-public abstract class Vehicul {
+public abstract class Vehicul implements Comparable{
     protected double pret;
     protected int capacitateCiclindrica;
     protected int putere;
