@@ -109,8 +109,7 @@ public class Showroom {
     public void printMoto() {
         System.out.println(this.moto);
     }
-
-    public ArrayList<src.Masina> cautaMasini(String marca) {
+    public ArrayList<src.Masina> cautaMasini(String marca) {//returnam lista de masini sortata dupa putere
         int count = 1;
         ArrayList<src.Masina> a = new ArrayList<src.Masina>();
         for (src.Masina i : this.masini)
@@ -118,12 +117,15 @@ public class Showroom {
                 System.out.println(count + ". " + i);
                 a.add(i);
                 count++;
-            } else continue;
-        return a;
+            } else {
+                continue;
+            }
 
+        Collections.sort(a);
+            return a;
     }
 
-    public ArrayList<src.Motocicleta> cautaMotociclete(String marca) {
+    public ArrayList<src.Motocicleta> cautaMotociclete(String marca) {//returnam lista de motocicleta sortata dupa putere
         int count = 1;
         ArrayList<src.Motocicleta> a = new ArrayList<src.Motocicleta>();
         for (src.Motocicleta i : this.moto)
@@ -131,9 +133,12 @@ public class Showroom {
                 System.out.println(count + ". " + i);
                 a.add(i);
                 count++;
-            } else continue;
-        return a;
+            } else {
+                continue;
+            }
 
+        Collections.sort(a);
+            return a;
     }
 
     public int masiniCount() {
