@@ -1,0 +1,9 @@
+7500.00, 1158, 143, 2011, 25.00, BMW, VILE23MON1OCICTTA, neagra, true, true
+2000.00, 589, 80, 2003, 20.00, Ducati, VOTOICLETIN123CMA, rosie, true, false
+3249.99, 650, 80, 2010, 20.00, Yamaha, CICLAVITOETN123MO, neagra, true, true
+2000.00, 589, 80, 2011, 22, Kawasaki, 1ICLETA23MOTOCVIN, albastra, true, true
+2000.00, 589, 80, 2003, 28.2, Honda, OTIN123MEOCICLVTA, gri, true, true;
+2000.00, 589, 80, 2017, 20.00, Suzuki, CLV1TOCIN23MOITA, neagra, true, false
+8000, 1349, 189, 2019, 26.3, Aprilia, VIICLENOCTA23MOT, rosie, false, true
+4200.68, 589, 80, 2013, 20.00, Suzuki, MIICVLETN12OTOC3A, alba, true, true
+6899.89, 768, 112, 2010, 18.9, Yamaha, OCIC23MLEVTN1OTA, neagra, true, true
