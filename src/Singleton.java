@@ -89,7 +89,7 @@ public class Singleton {
 
     private boolean createFile (){
         try{
-            File file = new File("src/csv/Audit.txt");
+            File file = new File("Programare-Avansata-pe-Obiecte/csv/Audit.txt");
             if (file.createNewFile()){
                 ;
                 //System.out.println("Fisierul s-a creat.");
@@ -114,7 +114,7 @@ public class Singleton {
         }
 
         try {
-            FileWriter fw = new FileWriter("src/csv/Audit.txt", true);
+            FileWriter fw = new FileWriter("Programare-Avansata-pe-Obiecte/csv/Audit.txt", true);
             LocalDateTime dmy = LocalDateTime.now();
             DateTimeFormatter format = DateTimeFormatter.ofPattern("HH:mm.dd-MM-yyyy");
             fw.write(String.class.cast(data) + ", " + dmy.format(format) + "\n");
