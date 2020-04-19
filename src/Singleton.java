@@ -23,7 +23,7 @@ public class Singleton {
 //    }
 
     private String createPath(String numeClasa){
-        String path = "src/csv/" + numeClasa + ".txt";
+        String path = "Programare-Avansata-pe-Obiecte/csv/" + numeClasa + ".txt";
 
         return path;
     }
