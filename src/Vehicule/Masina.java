@@ -5,12 +5,27 @@ public class Masina extends Vehicul implements Comparable {
     protected int numarLocuri;
     protected boolean gpl;
 
+    public void setNumarPortiere(int numarPortiere) {
+        this.numarPortiere = numarPortiere;
+    }
+
+    public void setNumarLocuri(int numarLocuri) {
+        this.numarLocuri = numarLocuri;
+    }
+
+    public void setGpl(boolean gpl) {
+        this.gpl = gpl;
+    }
 
     public Masina(double pret, int capacitateCiclindrica, int putere, int anFabricatie, double capacitateRezervor, String denumire, String serie, String culoare, int numarPortiere, int numarLocuri, boolean gpl) {
         super(pret, capacitateCiclindrica, putere, anFabricatie, capacitateRezervor, denumire, serie, culoare);
         this.numarPortiere = numarPortiere;
         this.numarLocuri = numarLocuri;
         this.gpl = gpl;
+    }
+
+    public Masina() {
+        super();
     }
 
     public int getNumarPortiere() {

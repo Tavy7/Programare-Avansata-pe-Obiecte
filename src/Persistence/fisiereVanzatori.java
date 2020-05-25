@@ -1,5 +1,6 @@
 package src.Persistence;
 
+import src.Database.VanzatorDatabase;
 import src.Entitati.Vanzator;
 import src.Locatii.Showroom;
 
@@ -45,7 +46,10 @@ public class fisiereVanzatori {
             while ((data = shReader.readLine()) != null) {
                 String[] splitData = data.split(", ");
 
-                showroom.addVanzator(new Vanzator(splitData[0], Integer.parseInt(splitData[1])));
+                Vanzator aux = new Vanzator(splitData[0], Integer.parseInt(splitData[1]));
+                showroom.addVanzator(aux);
+
+                VanzatorDatabase.getInstance().saveVanzator(aux);
             }
             //showroom.setVanzatori(Collections.sort(showroom.getVanzatori()));
         } catch (IOException e) {

@@ -1,8 +1,8 @@
 package src.Persistence;
 
-import src.Database.MasinaDatabase;
-import src.Locatii.Showroom;
-import src.Vehicule.Masina;
+import src.Database.MecanicDatabase;
+import src.Entitati.Mecanic;
+import src.Locatii.Service;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
@@ -11,19 +11,22 @@ import java.io.IOException;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
+public class fisiereMecanic {
+    private static fisiereMecanic instance = null;
 
-public class fisiereMasini{
-    private static fisiereMasini instance = null;
-
-    private fisiereMasini() {
+    private fisiereMecanic() {
     }
 
-    public static fisiereMasini getInstance() {
-        if (instance == null) {
-            instance = new fisiereMasini();
+    public static fisiereMecanic getInstance(){
+        if (instance == null){
+            instance = new fisiereMecanic();
         }
 
         return instance;
+    }
+
+    private static String path (){
+        return "src/csv/Mecanic.txt";
     }
 
     public void scrie(String data) throws IOException {
@@ -36,19 +39,18 @@ public class fisiereMasini{
         fw.close();
     }
 
-    public void citire(Showroom showroom) {
-        String path = "src/csv/Masina.txt";
+    public void citire(Service service) {
+        String path = "src/csv/Mecanic.txt";
 
         try (BufferedReader shReader = new BufferedReader(new FileReader(path))) {
             String data = "";
 
             while ((data = shReader.readLine()) != null) {
                 String[] splitData = data.split(", ");
-                Masina aux = new Masina(Double.parseDouble(splitData[0]), Integer.parseInt(splitData[1]), Integer.parseInt(splitData[2]),
-                        Integer.parseInt(splitData[3]), Double.parseDouble(splitData[4]), splitData[5], splitData[6], splitData[7],
-                        Integer.parseInt(splitData[8]), Integer.parseInt(splitData[9]), Boolean.parseBoolean(splitData[10]));
-                showroom.addMasina(aux);
-                MasinaDatabase.getInstance().saveMasina(aux);
+                Mecanic aux = new Mecanic(splitData[0], Integer.parseInt(splitData[1]));
+                service.addMecanic(aux);
+
+                MecanicDatabase.getInstance().saveMecanic(aux);
             }
         } catch (IOException e) {
             e.printStackTrace();

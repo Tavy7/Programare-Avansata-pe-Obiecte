@@ -1,5 +1,6 @@
 package src.Persistence;
 
+import src.Database.MotocicletaDatabase;
 import src.Locatii.Showroom;
 import src.Vehicule.Motocicleta;
 
@@ -43,9 +44,12 @@ public class fisiereMoto{
 
             while ((data = shReader.readLine()) != null) {
                 String[] splitData = data.split(", ");
-                showroom.addMoto(new Motocicleta(Double.parseDouble(splitData[0]), Integer.parseInt(splitData[1]), Integer.parseInt(splitData[2]),
+                Motocicleta aux = new Motocicleta(Double.parseDouble(splitData[0]), Integer.parseInt(splitData[1]), Integer.parseInt(splitData[2]),
                         Integer.parseInt(splitData[3]), Double.parseDouble(splitData[4]), splitData[5], splitData[6], splitData[7],
-                        Boolean.parseBoolean(splitData[8]), Boolean.parseBoolean(splitData[9])));
+                        Boolean.parseBoolean(splitData[8]), Boolean.parseBoolean(splitData[9]));
+                showroom.addMoto(aux);
+
+                MotocicletaDatabase.getInstance().saveMotocicleta(aux);
             }
         } catch (IOException e) {
             e.printStackTrace();

@@ -21,6 +21,42 @@ public abstract class Vehicul implements Comparable {
         this.culoare = culoare;
     }
 
+    public Vehicul() {
+
+    }
+
+    public void setPret(double pret) {
+        this.pret = pret;
+    }
+
+    public void setCapacitateCiclindrica(int capacitateCiclindrica) {
+        this.capacitateCiclindrica = capacitateCiclindrica;
+    }
+
+    public void setPutere(int putere) {
+        this.putere = putere;
+    }
+
+    public void setAnFabricatie(int anFabricatie) {
+        this.anFabricatie = anFabricatie;
+    }
+
+    public void setCapacitateRezervor(double capacitateRezervor) {
+        this.capacitateRezervor = capacitateRezervor;
+    }
+
+    public void setDenumire(String denumire) {
+        this.denumire = denumire;
+    }
+
+    public void setSerie(String serie) {
+        this.serie = serie;
+    }
+
+    public void setCuloare(String culoare) {
+        this.culoare = culoare;
+    }
+
     public double getPret() {
         return pret;
     }

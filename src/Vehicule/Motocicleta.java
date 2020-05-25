@@ -10,10 +10,13 @@ public class Motocicleta extends Vehicul implements Comparable {
         this.permitePasager = permitePasager;
     }
 
+    public Motocicleta() {
+
+    }
+
     public boolean isPermiteAtas() {
         return permiteAtas;
     }
-
 
     public boolean isPermitePasager() {
         return permitePasager;

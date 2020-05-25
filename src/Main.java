@@ -1,10 +1,13 @@
 package src;
 
+import src.Database.DatabaseConnection;
 import src.Locatii.Service;
 import src.Locatii.Showroom;
 import src.Service.ClasaSerivce;
 import src.Entitati.*;
 import src.Persistence.*;
+import java.sql.SQLException;
+import src.Database.DatabaseMenu;
 
 
 public class Main {
@@ -26,13 +29,26 @@ public class Main {
 
     public static Service initializareService(){
         Service service = new Service();
-        fisiereMecanici citireMecanici = fisiereMecanici.getInstance();
+        fisiereMecanic citireMecanici = fisiereMecanic.getInstance();
         citireMecanici.citire(service);
 
         return service;
     }
 
+    public static void databaseConection() throws SQLException {
+        DatabaseConnection db_instance = DatabaseConnection.getInstance();
+
+        String schema = db_instance.getConnection().toString();
+        System.out.println(schema);
+    }
+
     public static void main(String args[]) {
+        try {
+            databaseConection();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
         ClasaSerivce serv = new ClasaSerivce();
         Client client = new Client("Tavy", 100);
 
@@ -41,6 +57,13 @@ public class Main {
         Service service = initializareService();
         serv.setServ(service);
 
-        serv.magazin(client);
+//        try {
+//            serv.magazin(client);
+//        } catch (IOException e) {
+//            e.printStackTrace();
+//        }
+
+        DatabaseMenu meniuSql = new DatabaseMenu();
+        meniuSql.afisareMeniu();
     }
 }

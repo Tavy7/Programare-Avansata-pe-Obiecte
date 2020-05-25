@@ -8,12 +8,14 @@ public class Vanzator extends Angajat implements Operatii, Comparable {
         this.vanzare = 0;
     }
 
+    public Vanzator() {
+        super();
+    }
+
     public void prezentare() {
         System.out.println(super.toString() + "\nLucrez ca vanzator de masini. Cu ce te pot ajuta?");
         System.out.println("1 - Vreau sa cumpar o masina.\n2 - Vreau sa cumpar o motocicleta\n3 - Doar ma uit.\n0 - Inapoi");
     }
-
-
 
     public boolean isOcupat() {
         return super.isOcupat();

@@ -13,6 +13,10 @@ public class Mecanic extends Angajat implements Operatii {
 
     }
 
+    public Mecanic() {
+
+    }
+
     public void prezentare() {
         System.out.println(super.toString() + "\nLucrez ca mecanic de masini. Cu ce te pot ajuta?");
     }

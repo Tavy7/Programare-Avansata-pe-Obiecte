@@ -1,8 +1,7 @@
 package src.Locatii;
 
 import src.Entitati.Mecanic;
-import src.Persistence.fisiereMasini;
-import src.Persistence.fisiereMecanici;
+import src.Persistence.fisiereMecanic;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -22,7 +21,7 @@ public class Service {
 
     public Mecanic findMechanic() {
         try {
-            fisiereMecanici.getInstance().scrie("cautare_mecanic");
+            fisiereMecanic.getInstance().scrie("cautare_mecanic");
         } catch (IOException e) {
             e.printStackTrace();
         }
